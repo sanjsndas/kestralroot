@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kestral Root Lab • cookies policy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #cae9ff 0%, #d0efff 45%, #e1f3fe 100%);
+      color: #023b5e;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 25px 50px -12px rgba(2, 80, 120, 0.4);
+      border-left: 2px solid #b3e0ff;
+      border-right: 2px solid #b3e0ff;
+    }
+
+    header {
+      background: #b8dcf8;
+      padding: 2.5rem 2rem 1.8rem;
+      text-align: center;
+      border-bottom: 6px solid #5f9fc0;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 400;
+      letter-spacing: 6px;
+      word-spacing: 12px;
+      color: #003952;
+      text-shadow: 4px 4px 0 #d8ecff, 7px 7px 0 rgba(90, 169, 220, 0.3);
+    }
+
+    header h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #02547d;
+      margin-top: 0.5rem;
+      border-top: 2px dashed #9ac9e4;
+      padding-top: 0.8rem;
+      display: inline-block;
+    }
+
+    .sky-banner {
+      background: #9ac9e4 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none" fill="%23ffffff40"><path d="M0,10 Q20,0 40,10 T80,10 T120,10" /></svg>');
+      height: 80px;
+      background-size: cover;
+      opacity: 0.35;
+    }
+
+    nav {
+      background: #b1daf5;
+      padding: 0.8rem 2rem;
+      display: flex;
+      gap: 2.8rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #b0e0fa;
+      font-weight: 500;
+    }
+
+    nav a {
+      color: #01426a;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-left: 4px solid transparent;
+      padding-left: 8px;
+      transition: 0.15s;
+    }
+
+    nav a:hover {
+      border-left-color: #004070;
+      background: #ddf0ff;
+      padding: 0.3rem 0.8rem 0.3rem 1.2rem;
+      transform: scale(1.02);
+    }
+
+    /* cookies page main layout — soft, airy, readable */
+    .cookies-policy {
+      padding: 2.5rem 2rem;
+    }
+
+    .intro-cookie {
+      background: #eaf5ff;
+      border-radius: 60px 10px 60px 10px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2.8rem;
+      border: 2px solid white;
+      box-shadow: inset 0 0 0 3px #b8dfff, 10px 10px 0 #7bb9da;
+    }
+
+    .intro-cookie h3 {
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: #014c74;
+      border-left: 14px solid #0099dd;
+      padding-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .intro-cookie p {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .cookie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .cookie-card {
+      background: #ecf7fe;
+      border-radius: 48px 0 48px 0;
+      padding: 2rem 1.8rem;
+      border: 2px solid white;
+      box-shadow: inset 0 0 0 3px #b1dfff, 7px 7px 0 #78b9db;
+      transition: 0.1s;
+    }
+
+    .cookie-card:hover {
+      transform: translate(2px, 2px);
+      box-shadow: inset 0 0 0 3px #b1dfff, 4px 4px 0 #559ac2;
+    }
+
+    .cookie-card h4 {
+      font-size: 2rem;
+      font-weight: 350;
+      color: #01578a;
+      border-bottom: 3px dashed #9ac9f0;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cookie-card h4 span {
+      font-size: 2.3rem;
+    }
+
+    .cookie-card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+
+    .cookie-card th {
+      text-align: left;
+      background: #b8dafe;
+      padding: 0.5rem 0.8rem;
+      color: #002d49;
+      font-weight: 600;
+      border-radius: 20px 4px 20px 4px;
+    }
+
+    .cookie-card td {
+      padding: 0.7rem 0.3rem;
+      border-bottom: 1px solid #b3daf5;
+    }
+
+    .cookie-card td:first-child {
+      font-weight: 500;
+    }
+
+    .pref-box {
+      background: #dcf0ff;
+      border-radius: 100px 10px 100px 10px;
+      padding: 1.8rem 2.2rem;
+      margin: 2.8rem 0 2rem;
+      border: 4px solid white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pref-box p {
+      font-size: 1.4rem;
+      font-weight: 450;
+      color: #003f63;
+    }
+
+    .cookie-toggle {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: #ecf7ff;
+      padding: 1rem 2rem;
+      border-radius: 80px 10px 80px 10px;
+      border: 2px solid #aad0f0;
+    }
+
+    .cookie-toggle label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .cookie-toggle input[type="checkbox"] {
+      width: 1.5rem;
+      height: 1.5rem;
+      accent-color: #0077be;
+    }
+
+    .btn-cookie {
+      background: #025886;
+      color: white;
+      font-size: 1.4rem;
+      padding: 0.8rem 2.2rem;
+      border: none;
+      border-radius: 60px 8px 60px 8px;
+      box-shadow: 5px 5px 0 #003952;
+      cursor: pointer;
+      transition: 0.1s;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .btn-cookie:hover {
+      background: #016c9e;
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 #003952;
+    }
+
+    .opt-out-section {
+      background: #e1f1fd;
+      border-radius: 48px 0 48px 0;
+      padding: 2rem 2.2rem;
+      margin-top: 2.2rem;
+      border: 2px solid white;
+      box-shadow: inset 0 0 0 3px #b1dfff, 10px 10px 0 #78b9db;
+    }
+
+    .opt-out-section h5 {
+      font-size: 2.2rem;
+      font-weight: 330;
+      color: #01527a;
+      border-left: 10px solid #0a8ecf;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .opt-out-section a {
+      color: #025886;
+      text-decoration: underline wavy #9ac9f0;
+      font-weight: 500;
+    }
+
+    .footer {
+      background: #025886;
+      color: #e3f2fd;
+      padding: 2rem 2rem 2rem;
+      border-top: 8px solid #7fc4e0;
+      font-size: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer .address {
+      font-weight: 300;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      background: #003f60;
+      padding: 0.8rem 2rem;
+      border-radius: 60px 10px 60px 10px;
+    }
+
+    .footer .number {
+      font-size: 2.2rem;
+      font-weight: 500;
+      background: #b1e2ff;
+      color: #00293d;
+      padding: 0.5rem 2rem;
+      border-radius: 100px;
+      box-shadow: 0 0 0 3px white;
+    }
+
+    .footer .kestral {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      border-top: 2px dashed #addbff;
+      padding-top: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .small-print {
+      font-size: 0.95rem;
+      color: #2f607e;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .last-updated {
+      background: #ffffffb3;
+      border-radius: 100px;
+      padding: 0.4rem 1.6rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      border: 2px solid white;
+    }
+
+    @media (max-width: 700px) {
+      header h1 { font-size: 2.8rem; }
+      .pref-box { flex-direction: column; align-items: start; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>KESTRAL ROOT LAB</h1>
+    <h2>✦ sky‑deep gardening ✦</h2>
+    <div class="sky-banner"></div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms Of Privacy</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="cookies.html">Cookies Policy</a>
+  </nav>
+
+  <!-- MAIN COOKIES CONTENT (unique, detailed, friendly) -->
+  <div class="cookies-policy">
+
+    <div class="intro-cookie">
+      <h3>🍪 sky & soil cookies</h3>
+      <p>We use small crumbs of data — just like organic matter — to make the Kestral Root Lab site feel like home. Our cookies remember your preferences, help you navigate, and sometimes help us understand which blue poppy pages you love most. No creepy tracking, just honest earth‑star tech. 🌱</p>
+      <div class="last-updated">☁️ last amended: vernal equinox 2025</div>
+    </div>
+
+    <!-- cookie grid: three categories -->
+    <div class="cookie-grid">
+      <!-- essential / necessary -->
+      <div class="cookie-card">
+        <h4><span>⚙️</span> essential roots</h4>
+        <table>
+          <tr><th>name</th><th>purpose</th><th>duration</th></tr>
+          <tr><td>krl_session</td><td>keeps you signed in / secure</td><td>session</td></tr>
+          <tr><td>csrf_token</td><td>prevents cross‑site requests</td><td>session</td></tr>
+          <tr><td>cookie_consent</td><td>remembers your cookie choices</td><td>1 year</td></tr>
+          <tr><td>sky_map_tile</td><td>loads cloud‑bed map properly</td><td>session</td></tr>
+        </table>
+        <p class="small-print">always active — they keep the greenhouse door locked.</p>
+      </div>
+
+      <!-- preference / functionality -->
+      <div class="cookie-card">
+        <h4><span>🌿</span> preference & soil</h4>
+        <table>
+          <tr><th>name</th><th>purpose</th><th>duration</th></tr>
+          <tr><td>krl_theme</td><td>remembers text size / contrast</td><td>6 months</td></tr>
+          <tr><td>plant_zone</td><td>your hardiness zone (for seeds)</td><td>1 year</td></tr>
+          <tr><td>newsletter_popup</td><td>prevents repeat pop‑ups</td><td>30 days</td></tr>
+          <tr><td>last_sky_signal</td><td>fills contact form hints</td><td>1 month</td></tr>
+        </table>
+        <p class="small-print">you can switch these off, but the garden may feel less personal.</p>
+      </div>
+
+      <!-- analytics / cloud stats -->
+      <div class="cookie-card">
+        <h4><span>📡</span> cloud‑gazing</h4>
+        <table>
+          <tr><th>name</th><th>purpose</th><th>duration</th></tr>
+          <tr><td>_ga (KRL)</td><td>anonymous page view counter</td><td>2 years</td></tr>
+          <tr><td>_gid</td><td>distinguish visitors (privacy‑safe)</td><td>24h</td></tr>
+          <tr><td>ref_sky</td><td>knows if you came from a newsletter</td><td>90 days</td></tr>
+          <tr><td>lab_visit</td><td>aggregate trial garden visits</td><td>1 month</td></tr>
+        </table>
+        <p class="small-print">opt out below — we respect your privacy like deep mycelium.</p>
+      </div>
+    </div>
+
+    <!-- preference toggle (interactive but front‑end demo) -->
+    <div class="pref-box">
+      <p>🌤️  your cookie preferences</p>
+      <div class="cookie-toggle">
+        <label><input type="checkbox" checked disabled> essential (always on)</label>
+        <label><input type="checkbox" checked id="prefCheck"> preference cookies</label>
+        <label><input type="checkbox" checked id="analyticsCheck"> analytics cookies</label>
+      </div>
+      <button class="btn-cookie" onclick="alert('✨ your sky preferences have been saved (demo). in a real implementation we would store your choice.');">save my sky choices</button>
+    </div>
+
+    <!-- opt out & third party details (additional unique info) -->
+    <div class="opt-out-section">
+      <h5>🕊️  opt‑out / third‑clouds</h5>
+      <p>We partner with a small, local analytics service (RootCounter) that does not sell or share your data. You can also disable specific cookies via your browser. Some pages may embed sky maps from openstreetmap.org – they set a temporary cookie to remember map tiles. If you'd like to fully opt out of any non‑essential cookie, please use our <a href="#">preference centre</a> (reachable by sky‑packet) or email <strong>privacy@kestralroot.lab</strong>.</p>
+      <p style="margin-top: 1rem;">🌿 <strong>do not track (DNT):</strong> we honor DNT signals from most modern browsers. If DNT is enabled, we only place essential roots cookies.</p>
+      <p style="margin-top: 1rem;">🧪 <strong>experimental plot cookies</strong> — from time to time we run trials (e.g. which sky‑letter layout you prefer). Those are always anonymous and you can withdraw via the toggle above.</p>
+    </div>
+
+    <!-- extra row with link to similar policies, like contact page extra notes -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 3rem 0 1.5rem; background: #d8efff; border-radius: 80px 8px 80px 8px; padding: 1.5rem 2rem;">
+      <div style="flex: 1; min-width: 200px;">
+        <span style="font-size: 2rem;">📜</span><br>
+        <strong>related documents</strong><br>
+        <a href="privacy.html" style="color: #014b75;">privacy policy</a> · <a href="terms.html" style="color: #014b75;">terms of privacy</a>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <span style="font-size: 2rem;">🍪</span><br>
+        <strong>cookie jar contact</strong><br>
+        +1 (802) 555‑0182 (cookie line)
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <span style="font-size: 2rem;">📧</span><br>
+        <strong>data requests</strong><br>
+        privacy@kestralroot.lab
+      </div>
+    </div>
+
+    <!-- small note: just like contact page has a tiny note at form bottom -->
+    <div class="small-note" style="background: #fff9e0; padding: 1rem; border-radius: 40px; border: 2px solid white;">
+      ⭐ we update this cookie policy whenever we plant a new digital variety. last crust revised: march 2025.
+    </div>
+  </div>
+
+  <!-- FOOTER exactly matches index/contact: same address/number -->
+  <footer class="footer">
+    <div class="address">
+      🏡 Kestral Root Lab HQ<br>
+      1470 Skyline Drive • BLDG 12<br>
+      Bluefield, VT  05432<br>
+      United States
+    </div>
+    <div class="number">
+      📞 +1 (802) 555 ‑ 0176
+    </div>
+    <div class="kestral">
+      ✦  K E S T R A L  ✦  R O O T  ✦  L A B  ✦  since 1973  ✦
+    </div>
+  </footer>
+
+</div>
+
+<!-- additional note: this cookies page has unique content, descriptive tables, toggle (demo), and keeps consistent with original theme -->
+</body>
+</html>

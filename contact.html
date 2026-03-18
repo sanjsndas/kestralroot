@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kestral Root Lab • reach the sky · contact</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #cae9ff 0%, #d0efff 45%, #e1f3fe 100%);
+      color: #023b5e;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 25px 50px -12px rgba(2, 80, 120, 0.4);
+      border-left: 2px solid #b3e0ff;
+      border-right: 2px solid #b3e0ff;
+    }
+
+    header {
+      background: #b8dcf8;
+      padding: 2.5rem 2rem 1.8rem;
+      text-align: center;
+      border-bottom: 6px solid #5f9fc0;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 400;
+      letter-spacing: 6px;
+      word-spacing: 12px;
+      color: #003952;
+      text-shadow: 4px 4px 0 #d8ecff, 7px 7px 0 rgba(90, 169, 220, 0.3);
+    }
+
+    header h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #02547d;
+      margin-top: 0.5rem;
+      border-top: 2px dashed #9ac9e4;
+      padding-top: 0.8rem;
+      display: inline-block;
+    }
+
+    .sky-banner {
+      background: #9ac9e4 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none" fill="%23ffffff40"><path d="M0,10 Q20,0 40,10 T80,10 T120,10" /></svg>');
+      height: 80px;
+      background-size: cover;
+      opacity: 0.35;
+    }
+
+    nav {
+      background: #b1daf5;
+      padding: 0.8rem 2rem;
+      display: flex;
+      gap: 2.8rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #b0e0fa;
+      font-weight: 500;
+    }
+
+    nav a {
+      color: #01426a;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-left: 4px solid transparent;
+      padding-left: 8px;
+      transition: 0.15s;
+    }
+
+    nav a:hover {
+      border-left-color: #004070;
+      background: #ddf0ff;
+      padding: 0.3rem 0.8rem 0.3rem 1.2rem;
+      transform: scale(1.02);
+    }
+
+    /* contact specific grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 2.2rem;
+      padding: 2.5rem 2rem;
+    }
+
+    .contact-form {
+      background: #e4f2fd;
+      border-radius: 48px 0 48px 0;
+      padding: 2rem 2rem 2.5rem;
+      border: 2px solid white;
+      box-shadow: inset 0 0 0 3px #b1dfff, 10px 10px 0 #78b9db;
+    }
+
+    .contact-form h3 {
+      font-size: 2.4rem;
+      font-weight: 330;
+      color: #014c74;
+      border-left: 12px solid #0099dd;
+      padding-left: 1.3rem;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .form-row {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #003f63;
+      margin-bottom: 0.3rem;
+      padding-left: 10px;
+    }
+
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      background: white;
+      border: 3px solid #b3dff0;
+      border-radius: 40px 8px 40px 8px;
+      font-size: 1.1rem;
+      color: #023b5e;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+
+    .form-row textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus,
+    .form-row select:focus {
+      border-color: #0077be;
+      outline: none;
+      box-shadow: 0 0 0 5px #b3e2fc;
+      background: #f9ffff;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+      background: #d7edff;
+      padding: 1rem 1.8rem;
+      border-radius: 60px 10px 60px 10px;
+    }
+
+    .radio-group div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .radio-group input[type="radio"] {
+      width: 1.3rem;
+      height: 1.3rem;
+      accent-color: #0072aa;
+    }
+
+    .radio-group label {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .btn-submit {
+      background: #025886;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 500;
+      padding: 0.8rem 2.5rem;
+      border: none;
+      border-radius: 100px 12px 100px 12px;
+      box-shadow: 6px 6px 0 #003952, 0 10px 20px -5px #023855;
+      cursor: pointer;
+      transition: 0.1s ease;
+      margin-top: 0.5rem;
+      width: 100%;
+      letter-spacing: 2px;
+    }
+
+    .btn-submit:hover {
+      background: #016c9e;
+      transform: translate(3px, 3px);
+      box-shadow: 3px 3px 0 #003952, 0 10px 20px -5px #023855;
+    }
+
+    .sky-details {
+      background: #d6ecfe;
+      border-radius: 48px 0 48px 0;
+      padding: 2rem 2rem;
+      border: 2px solid white;
+      box-shadow: inset 0 0 0 3px #b1dfff, 10px 10px 0 #78b9db;
+      align-self: start;
+    }
+
+    .sky-details h4 {
+      font-size: 2.2rem;
+      font-weight: 330;
+      color: #014c74;
+      border-bottom: 3px dotted #9ac9f0;
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-card {
+      background: #ecf7ff;
+      border-radius: 40px 8px 40px 8px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0 1.8rem;
+      border: 2px solid #addbff;
+      font-size: 1.2rem;
+    }
+
+    .contact-card strong {
+      color: #003f6b;
+      font-weight: 600;
+      display: inline-block;
+      min-width: 100px;
+    }
+
+    .contact-card p {
+      margin: 0.5rem 0;
+    }
+
+    .sky-map {
+      background: #b1d9f0;
+      padding: 1.5rem 1rem;
+      border-radius: 80px 8px 80px 8px;
+      text-align: center;
+      border: 4px solid white;
+      margin: 2rem 0;
+    }
+
+    .sky-map svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .testimonial {
+      background: #ecf7ff;
+      margin: 2rem 0 0;
+      padding: 1.5rem;
+      font-style: italic;
+      border-radius: 100px 20px 100px 20px;
+      border: 2px solid #a2d4f4;
+      font-size: 1.1rem;
+    }
+
+    .footer {
+      background: #025886;
+      color: #e3f2fd;
+      padding: 2rem 2rem 2rem;
+      border-top: 8px solid #7fc4e0;
+      font-size: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer .address {
+      font-weight: 300;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      background: #003f60;
+      padding: 0.8rem 2rem;
+      border-radius: 60px 10px 60px 10px;
+    }
+
+    .footer .number {
+      font-size: 2.2rem;
+      font-weight: 500;
+      background: #b1e2ff;
+      color: #00293d;
+      padding: 0.5rem 2rem;
+      border-radius: 100px;
+      box-shadow: 0 0 0 3px white;
+    }
+
+    .footer .kestral {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      border-top: 2px dashed #addbff;
+      padding-top: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .required-star {
+      color: #b44;
+      font-size: 1.4rem;
+      margin-left: 4px;
+    }
+
+    .small-note {
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+      color: #2e5e7a;
+      padding-left: 15px;
+    }
+
+    @media (max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      header h1 { font-size: 2.8rem; }
+      nav { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>KESTRAL ROOT LAB</h1>
+    <h2>✦ sky‑deep gardening ✦</h2>
+    <div class="sky-banner"></div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms Of Privacy</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="cookies.html">Cookies Policy</a>
+  </nav>
+
+  <!-- CONTACT page main area (two columns) -->
+  <div class="contact-grid">
+    <!-- LEFT: contact form (functional, with unique fields) -->
+    <section class="contact-form">
+      <h3>☁️ send a skysignal</h3>
+      <form action="#" method="post">
+        <div class="form-row">
+          <label>your name <span class="required-star">*</span></label>
+          <input type="text" name="name" placeholder="e.g., Skye Gardner" required>
+        </div>
+
+        <div class="form-row">
+          <label>email <span class="required-star">*</span></label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-row">
+          <label>phone (optional)</label>
+          <input type="tel" name="phone" placeholder="+1 (802) 555 ...">
+        </div>
+
+        <div class="form-row">
+          <label>i am a …</label>
+          <div class="radio-group">
+            <div><input type="radio" name="role" value="home" id="home" checked> <label for="home">home gardener</label></div>
+            <div><input type="radio" name="role" value="pro" id="pro"> <label for="pro">professional / nursery</label></div>
+            <div><input type="radio" name="role" value="media" id="media"> <label for="media">media / press</label></div>
+            <div><input type="radio" name="role" value="research" id="research"> <label for="research">research</label></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>subject</label>
+          <select name="subject">
+            <option value="general">general sky inquiry</option>
+            <option value="seeds">seed / root order</option>
+            <option value="cloud">cloud‑capture workshop</option>
+            <option value="blue">blue plant breeding</option>
+            <option value="visit">visiting the lab</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>your message <span class="required-star">*</span></label>
+          <textarea name="message" placeholder="tell us about your sky garden, ask about indigo milk caps, or suggest a collaboration …" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label style="display: inline; font-size: 1rem;">🌿 would you like the monthly sky‑letter?</label>
+          <div style="display: flex; gap: 2rem; margin-top: 0.4rem;">
+            <label><input type="checkbox" name="newsletter" value="yes" checked> yes, send me blue notes</label>
+            <label><input type="checkbox" name="seedlist" value="yes"> also include 2025 seed list</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">✧ send skysignal ✧</button>
+        <div class="small-note">we reply within 2–3 blue moons (usually 48h).</div>
+      </form>
+    </section>
+
+    <!-- RIGHT: contact details, map, extra sky info -->
+    <aside class="sky-details">
+      <h4>💬 reach the root</h4>
+      <div class="contact-card">
+        <p><strong>📍 visit:</strong> 1470 Skyline Drive, BLDG 12<br>Bluefield, VT 05432</p>
+        <p><strong>📞 call:</strong> +1 (802) 555‑0176</p>
+        <p><strong>🕒 hours:</strong> Wed–Sat 9am–5pm<br>Sunday (blue hour) 12pm–8pm</p>
+        <p><strong>✉︎ email:</strong> sky@kestralroot.lab</p>
+      </div>
+
+      <!-- sky map (decorative svg) -->
+      <div class="sky-map">
+        <svg width="280" height="140" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="150" fill="#aacdec" rx="12" />
+          <!-- clouds -->
+          <circle cx="60" cy="45" r="28" fill="white" fill-opacity="0.9" />
+          <circle cx="90" cy="35" r="32" fill="white" fill-opacity="0.95" />
+          <circle cx="120" cy="50" r="24" fill="white" fill-opacity="0.8" />
+          <circle cx="210" cy="70" r="35" fill="white" fill-opacity="0.85" />
+          <circle cx="250" cy="60" r="28" fill="white" fill-opacity="0.9" />
+          <circle cx="280" cy="80" r="30" fill="white" fill-opacity="0.7" />
+          <!-- little roots / lab icon -->
+          <path d="M40 120 L55 95 L70 120 L85 95 L100 120" stroke="#025886" stroke-width="5" stroke-linecap="round" fill="none" />
+          <circle cx="70" cy="130" r="8" fill="#025886" />
+          <text x="135" y="120" font-family="Segoe UI" font-size="20" fill="#003f60" font-weight="bold">KRL</text>
+          <text x="135" y="140" font-family="Segoe UI" font-size="11" fill="#01426a">sky·root hq</text>
+        </svg>
+        <p style="margin-top: 0.5rem; font-weight: 500;">⛅ main campus & cloud beds</p>
+      </div>
+
+      <!-- two mini blurbs -->
+      <div class="testimonial" style="margin: 1.5rem 0 0;">
+        🌸 "The quickest way to the sky is through the soil. Our team is usually out in the trial gardens, but we check messages every evening." — Fern, head pollinator
+      </div>
+
+      <div style="background: #bde0fe; padding: 1rem; border-radius: 30px 8px 30px 8px; margin-top: 2rem; border: 2px solid white;">
+        <h5 style="font-size: 1.5rem; font-weight: 300;">📬 sky‑letter archive</h5>
+        <p style="margin-top: 0.3rem;">ask for vol.12 "blue poppies", vol.17 "indigo milk cap cultivation", or the brand‑new "cloud‑capture handbook".</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- extra row – contact notes / sky address (still part of main flow) -->
+  <div style="padding: 0 2rem 2rem 2rem; display: flex; flex-wrap: wrap; gap: 1.8rem; justify-content: space-between; border-bottom: 2px solid #b3e0ff;">
+    <div style="background: #d6f0ff; border-radius: 60px 10px 60px 10px; padding: 1rem 2rem; flex: 1 1 200px;">
+      <span style="font-size: 2rem; display: block;">☎️</span>
+      <strong>call & talk roots</strong> <br>Mon–Fri 9am–4pm ET
+    </div>
+    <div style="background: #d6f0ff; border-radius: 60px 10px 60px 10px; padding: 1rem 2rem; flex: 1 1 200px;">
+      <span style="font-size: 2rem;">📠</span>
+      <strong>sky fax (rare)</strong> <br>+1 (802) 555‑0177
+    </div>
+    <div style="background: #d6f0ff; border-radius: 60px 10px 60px 10px; padding: 1rem 2rem; flex: 1 1 240px;">
+      <span style="font-size: 2rem;">📡</span>
+      <strong>packet‑radio / cloud</strong> <br>call sign: KRL‑sky‑1
+    </div>
+  </div>
+
+  <!-- FOOTER exactly as index (same address/number) -->
+  <footer class="footer">
+    <div class="address">
+      🏡 Kestral Root Lab HQ<br>
+      1470 Skyline Drive • BLDG 12<br>
+      Bluefield, VT  05432<br>
+      United States
+    </div>
+    <div class="number">
+      📞 +1 (802) 555 ‑ 0176
+    </div>
+    <div class="kestral">
+      ✦  K E S T R A L  ✦  R O O T  ✦  L A B  ✦  since 1973  ✦
+    </div>
+  </footer>
+</div>
+
+<!-- additional note: contact page complements the huge original word count. Form is front‑end only, but fully styled and interactive (no actual POST). -->
+</body>
+</html>
